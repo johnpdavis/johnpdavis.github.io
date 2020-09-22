@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>John Davis - Hobby Portfolio</title>
+    <link>http://example.org/</link>
+    <description>Recent content on John Davis - Hobby Portfolio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vantage Point</title>
+      <link>http://example.org/vantage_point/</link>
+      <pubDate>Mon, 21 Sep 2020 16:30:43 -0500</pubDate>
+      
+      <guid>http://example.org/vantage_point/</guid>
+      <description>Vantage Point creates galleries from photo albums and directories. If you gather art and other sources of creative inspiration, Vantage Point provides a great way of viewing these collections without forcing you into a foreign file structure.
+
+Privacy Policy
+ Birds Eye View Vantage Point renders birds-eye-views of your picture collections. Just feed it a folder or album and it goes to work arranging your galleries into a mosaic format that attempts to honor the aspect ratio of the images.</description>
+    </item>
+    
+    <item>
+      <title>Fourpoint</title>
+      <link>http://example.org/fourpoint/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/fourpoint/</guid>
+      <description>Fourpoint makes it easy for to calculate the GPA of a single semester, or the cumulative GPA of your educational career. As you add semesters and courses Fourpoint will provide you quick and accurate GPA results.
+• Supports multiple schools • Supports iCloud syncing to keep your devices up to date
+Privacy Policy
+
+ GPA Made Easy </description>
+    </item>
+    
+    <item>
+      <title>Fourpoint Privacy Policy</title>
+      <link>http://example.org/fourpoint/fourpoint_privacy_policy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/fourpoint/fourpoint_privacy_policy/</guid>
+      <description>This policy applies to all information collected or submitted on John Davis&#39; website and Fourpoint for iPhone, iPad and any other devices and platforms.
+ INFORMATION WE COLLECT Through using Fourpoint you enter information about your courses across multiple semesters and years of school.
+The following information is synced between your devices using Apple’s CloudKit technology. This information is not shared with me, the developer.
+GITHUB This website is hosted by GITHUB.</description>
+    </item>
+    
+    <item>
+      <title>Services</title>
+      <link>http://example.org/services/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/services/</guid>
+      <description>This is a page about the services, which I offer.
+It carries a lot more detail than what I put on the homepage - I swear!
+You want to know what I can do for you?
+Well, let me tell ya!
+ Nutrition Coaching This is not an easy task. You will likely have to pay money for this. You know what - let us look at a nice picture first.</description>
+    </item>
+    
+    <item>
+      <title>Vantage Point Privacy Policy</title>
+      <link>http://example.org/vantage_point/vantage_point_privacy_policy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/vantage_point/vantage_point_privacy_policy/</guid>
+      <description>This policy applies to all information collected or submitted on John Davis&#39; website and Vantage Point for iPhone, iPad and any other devices and platforms.
+ INFORMATION WE COLLECT You may optionally add images to the Vantage Point inbox via the available share extensions. These images are stored locally on device in the Vantage Point sandbox and are not synced across the network or communicated elsewhere. The images stored in the Vantage Point inbox are not encrypted and may become visible to other applications in future updates.</description>
+    </item>
+    
+  </channel>
+</rss>

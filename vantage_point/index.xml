@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vantage_points on John Davis - Hobby Portfolio</title>
+    <link>http://example.org/vantage_point/</link>
+    <description>Recent content in Vantage_points on John Davis - Hobby Portfolio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://example.org/vantage_point/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vantage Point Privacy Policy</title>
+      <link>http://example.org/vantage_point/vantage_point_privacy_policy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/vantage_point/vantage_point_privacy_policy/</guid>
+      <description>This policy applies to all information collected or submitted on John Davis&#39; website and Vantage Point for iPhone, iPad and any other devices and platforms.
+ INFORMATION WE COLLECT You may optionally add images to the Vantage Point inbox via the available share extensions. These images are stored locally on device in the Vantage Point sandbox and are not synced across the network or communicated elsewhere. The images stored in the Vantage Point inbox are not encrypted and may become visible to other applications in future updates.</description>
+    </item>
+    
+  </channel>
+</rss>

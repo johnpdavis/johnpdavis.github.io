@@ -1,0 +1,52 @@
+.post-holder {
+  background: #373737;
+  color: white;
+}
+
+.post-holder.odd {
+  background: #585858;
+  color: white;
+}
+.post-after {
+  visibility: hidden;
+}
+
+#site-head {
+  background: #373737 no-repeat center center;
+}
+
+@media only screen and (max-width: 1130px) {
+  .fixed-nav {
+    background: #373737;
+  }
+
+  a.fn-item {
+    color: #FFFFFF;
+  }
+}
+
+a.fn-item {
+  color: #FFFFFF;
+}
+
+a.fn-item.active {
+color: #367aff;
+opacity: 1;
+}
+
+a.fn-item:hover {
+  color: #5a98ff;
+}
+
+a.btn {
+  background-color: #367aff;
+}
+
+a.btn:hover {
+  background-color: #5a98ff;
+  color: #FFFFFF;
+}
+
+a:hover {
+  color: #5a98ff;
+}
