@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tallgrasses on John Davis - Hobby Portfolio</title>
+    <link>https://johnpdavis.github.io/tallgrass/</link>
+    <description>Recent content in Tallgrasses on John Davis - Hobby Portfolio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://johnpdavis.github.io/tallgrass/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tall Grass Privacy Policy</title>
+      <link>https://johnpdavis.github.io/tallgrass/tallgrass_privacy_policy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://johnpdavis.github.io/tallgrass/tallgrass_privacy_policy/</guid>
+      <description>This policy applies to all information collected or submitted on John Davis&#39; website and TallGrass for iPhone, iPad and any other devices and platforms.
+ INFORMATION WE COLLECT TallGrass is a consumption-only application. The widgets are configured to pull from public PokeAPI endpoints.
+GITHUB This website is hosted by GITHUB. They have access to some basic technical information to perform this role, such as your IP address.
+APPLE Crash reports, logs, and rudimentary usage information are collected by Apple and provided to us in order to fix problems that result in an application crash.</description>
+    </item>
+    
+  </channel>
+</rss>

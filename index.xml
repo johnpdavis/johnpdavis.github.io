@@ -67,6 +67,18 @@ APPLE Crash reports, logs, and rudimentary usage information are collected by Ap
     </item>
     
     <item>
+      <title>Tall Grass Privacy Policy</title>
+      <link>https://johnpdavis.github.io/tallgrass/tallgrass_privacy_policy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://johnpdavis.github.io/tallgrass/tallgrass_privacy_policy/</guid>
+      <description>This policy applies to all information collected or submitted on John Davis&#39; website and TallGrass for iPhone, iPad and any other devices and platforms.
+ INFORMATION WE COLLECT TallGrass is a consumption-only application. The widgets are configured to pull from public PokeAPI endpoints.
+GITHUB This website is hosted by GITHUB. They have access to some basic technical information to perform this role, such as your IP address.
+APPLE Crash reports, logs, and rudimentary usage information are collected by Apple and provided to us in order to fix problems that result in an application crash.</description>
+    </item>
+    
+    <item>
       <title>Vantage Point Privacy Policy</title>
       <link>https://johnpdavis.github.io/vantage_point/vantage_point_privacy_policy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
