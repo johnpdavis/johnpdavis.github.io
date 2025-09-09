@@ -1,0 +1,472 @@
+/* Modern Shibui Design System */
+/* Contemporary interpretation of 渋い - effortless, sophisticated beauty */
+
+:root {
+    --primary-text: #1a1a1a;
+    --secondary-text: #666;
+    --tertiary-text: #999;
+    --accent: #3b82f6;
+    --accent-hover: #2563eb;
+    --background: #ffffff;
+    --surface: #fafafa;
+    --border: #f1f1f1;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.02);
+    --shadow-md: 0 4px 24px rgba(0, 0, 0, 0.04);
+    --shadow-lg: 0 16px 64px rgba(0, 0, 0, 0.06);
+    --radius: 12px;
+    --transition: none;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family:
+        -apple-system, BlinkMacSystemFont, "Inter", "SF Pro Display", system-ui,
+        sans-serif;
+    line-height: 1.6;
+    color: var(--primary-text);
+    background: var(--background);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Layout */
+.content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 5vw, 3rem);
+}
+
+.inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 5vw, 3rem);
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--primary-text);
+    margin: 0 0 1rem 0;
+}
+
+.post-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    margin: clamp(2rem, 8vw, 4rem) 0 2rem 0;
+    letter-spacing: -0.04em;
+    color: var(--primary-text);
+    position: relative;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 600;
+    margin: 3rem 0 1.5rem 0;
+    color: var(--primary-text);
+}
+
+/* Header */
+.post-header {
+    margin-bottom: clamp(2rem, 6vw, 4rem);
+}
+
+#blog-logo {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.875rem;
+    color: var(--secondary-text);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    padding: clamp(2rem, 6vw, 3rem) 0 1rem 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2rem;
+    position: relative;
+    gap: 0.5rem;
+}
+
+#blog-logo::before {
+    content: "←";
+    opacity: 0;
+    transform: translateX(0.5rem);
+}
+
+#blog-logo:hover {
+    color: var(--accent);
+}
+
+#blog-logo:hover::before {
+    opacity: 1;
+}
+
+/* Content */
+.post-content {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--primary-text);
+    max-width: 100%;
+}
+
+.post-content p {
+    margin: 0 0 1.5rem 0;
+    color: var(--secondary-text);
+}
+
+.post-content img {
+    width: 100%;
+    height: auto;
+    margin: 3rem 0;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    object-fit: cover;
+}
+
+.post-content img:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+/* Links */
+a {
+    color: var(--accent);
+    text-decoration: none;
+    position: relative;
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+.post-content a:not(.app-store-link) {
+    border-bottom: 1px solid transparent;
+    padding-bottom: 1px;
+}
+
+.post-content a:not(.app-store-link):hover {
+    border-bottom-color: var(--accent);
+}
+
+/* App Store Button */
+.post-content a img[alt="App Store"] {
+    max-width: 160px;
+    margin: 2rem 0 1rem 0;
+    box-shadow: var(--shadow-sm);
+    border-radius: 8px;
+}
+
+.post-content a img[alt="App Store"]:hover {
+    box-shadow: var(--shadow-md);
+}
+
+/* Lists */
+ul,
+ol {
+    margin: 1.5rem 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--secondary-text);
+}
+
+ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.75rem;
+    width: 4px;
+    height: 4px;
+    background: var(--accent);
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+ol {
+    list-style: decimal;
+    padding-left: 1.5rem;
+}
+
+ol li {
+    margin-bottom: 0.75rem;
+    color: var(--secondary-text);
+}
+
+/* Horizontal Rules */
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 4rem 0;
+    position: relative;
+}
+
+hr::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: var(--background);
+    border: 2px solid var(--border);
+    border-radius: 50%;
+}
+
+/* Article */
+.post {
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+/* Footer */
+.site-footer {
+    margin-top: 6rem;
+    padding: 3rem 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--tertiary-text);
+}
+
+.site-footer a {
+    color: var(--secondary-text);
+    font-weight: 500;
+}
+
+.site-footer a:hover {
+    color: var(--accent);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .post-content {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .post-content img {
+        margin: 2rem 0;
+    }
+
+    h2 {
+        margin: 2rem 0 1rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .post-content img {
+        border-radius: 8px;
+    }
+}
+
+/* Focus States */
+a:focus,
+button:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Selection */
+::selection {
+    background: rgba(59, 130, 246, 0.1);
+    color: inherit;
+}
+
+::-moz-selection {
+    background: rgba(59, 130, 246, 0.1);
+    color: inherit;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Hero Section for Portfolio */
+.hero {
+    text-align: center;
+    padding: clamp(4rem, 12vw, 8rem) 0 clamp(3rem, 8vw, 6rem) 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: clamp(3rem, 8vw, 6rem);
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    letter-spacing: -0.05em;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    color: var(--secondary-text);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+/* Project Cards */
+.project {
+    margin-bottom: clamp(4rem, 10vw, 6rem);
+    padding-bottom: clamp(3rem, 8vw, 4rem);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+}
+
+.project:last-child {
+    border-bottom: none;
+    margin-bottom: 2rem;
+}
+
+.project-header {
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(1rem, 4vw, 2rem);
+    margin-bottom: 2rem;
+}
+
+.project-icon {
+    width: clamp(120px, 20vw, 180px);
+    height: auto;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    flex-shrink: 0;
+    margin-top: 0;
+}
+
+.project-icon:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.project-title {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 600;
+    margin: 0;
+    color: var(--primary-text);
+    text-align: left;
+    line-height: 1.2;
+}
+
+.project-description {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--secondary-text);
+    margin: 1.5rem 0;
+    max-width: 65ch;
+}
+
+.project-features {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.project-features li {
+    padding: 0.5rem 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    font-size: 0.875rem;
+    color: var(--secondary-text);
+    font-weight: 500;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    margin: 1rem 0 0.5rem 0;
+}
+
+.project-link::after {
+    content: "→";
+}
+
+.app-store-link {
+    display: block;
+    margin: 0.5rem 0 2rem 0;
+}
+
+/* Contact Section */
+.contact {
+    text-align: center;
+    padding: clamp(3rem, 8vw, 4rem) 0;
+    background: var(--surface);
+    margin-top: clamp(3rem, 8vw, 4rem);
+    border-radius: var(--radius);
+}
+
+.contact h2 {
+    font-size: clamp(1.5rem, 4vw, 1.875rem);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.contact-link {
+    color: var(--accent);
+    font-size: 1.125rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.contact-link:hover {
+    color: var(--accent-hover);
+}
+
+@media (max-width: 768px) {
+    .project-header {
+        flex-direction: column;
+        text-align: left;
+        gap: 1rem;
+    }
+
+    .project-features {
+        justify-content: flex-start;
+    }
+}

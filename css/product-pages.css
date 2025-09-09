@@ -1,0 +1,176 @@
+/* Product Pages CSS - Extracted from inline styles */
+
+.product-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    margin: 2rem 0 4rem 0;
+}
+
+.hero-content h1 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.125rem;
+    color: var(--secondary-text);
+    margin-bottom: 2rem;
+}
+
+.hero-image {
+    text-align: center;
+    align-self: start;
+}
+
+.hero-image img {
+    max-width: clamp(120px, 20vw, 180px);
+    height: auto;
+    margin: 0;
+    box-shadow: var(--shadow-lg);
+    border-radius: 24px;
+    vertical-align: top;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 3rem 0;
+}
+
+.benefit-item {
+    background: var(--surface);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    text-align: center;
+}
+
+.benefit-item h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.benefit-item p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--secondary-text);
+    line-height: 1.4;
+}
+
+.feature-highlight {
+    background: var(--surface);
+    padding: 2rem;
+    border-radius: var(--radius);
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.feature-highlight h2 {
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+}
+
+.feature-highlight p {
+    margin: 0 0 2rem 0;
+    color: var(--secondary-text);
+    max-width: 100%;
+}
+
+.feature-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    text-align: left;
+}
+
+.feature-list li {
+    background: var(--background);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    font-size: 0.9375rem;
+}
+
+.app-store-link {
+    display: inline-block;
+    margin-top: 2rem;
+}
+
+.app-store-link:hover {
+}
+
+.app-store-link img {
+    max-width: 160px;
+    height: auto;
+}
+
+.screenshot-container {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.screenshot-container img {
+    max-width: 400px;
+    width: 100%;
+    margin: 0;
+}
+
+.screenshot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.screenshot-item {
+    text-align: center;
+}
+
+.screenshot-item img {
+    max-width: 100%;
+    margin: 0 0 1rem 0;
+}
+
+.screenshot-item h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+}
+
+.screenshot-item p {
+    font-size: 0.875rem;
+    color: var(--secondary-text);
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .product-hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .hero-image {
+        order: -1;
+    }
+    
+    .hero-content {
+        text-align: left;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .screenshot-grid {
+        grid-template-columns: 1fr;
+    }
+}
