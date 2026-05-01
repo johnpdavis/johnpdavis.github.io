@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Software Product Portfolio" />
+
+  <title>John Davis - Hobby Portfolio</title>
+
+  <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+  <style>
+    :root {
+      color-scheme: light dark;
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --page: #f4f6f8;
+      --ink: #20272e;
+      --muted: #66717d;
+      --card: #ffffff;
+      --line: #dfe5eb;
+      --header: rgba(255, 255, 255, 0.92);
+      --media-bg: #eef2f6;
+      --footer: #20272e;
+      --footer-ink: #c9d2dc;
+      --footer-link: #ffffff;
+      --accent: #367aff;
+      --accent-hover: #5a98ff;
+      --shadow: 0 14px 30px rgba(24, 35, 48, 0.14);
+      --card-radius: 32px;
+      --media-inset: 14px;
+      --media-radius: calc(var(--card-radius) - var(--media-inset));
+      --content-max: 940px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --page: #10151b;
+        --ink: #eef3f8;
+        --muted: #a6b1bd;
+        --card: #18212b;
+        --line: rgba(218, 228, 238, 0.16);
+        --header: rgba(16, 21, 27, 0.92);
+        --media-bg: #121922;
+        --footer: #0c1117;
+        --footer-ink: #aeb8c4;
+        --footer-link: #eef3f8;
+        --accent: #89b8ff;
+        --accent-hover: #b7d1ff;
+        --shadow: 0 18px 38px rgba(0, 0, 0, 0.36);
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+      font-size: 62.5%;
+    }
+
+    body {
+      min-width: 320px;
+      min-height: 100%;
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      font-size: 1.8rem;
+      line-height: 1.55;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 0.08em;
+      text-underline-offset: 0.2em;
+      transition: color 160ms ease, border-color 160ms ease, transform 160ms ease;
+    }
+
+    a:hover,
+    a:focus-visible {
+      color: var(--accent-hover);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .site-header {
+      border-bottom: 1px solid var(--line);
+      background: var(--header);
+    }
+
+    .header-inner,
+    .home-main,
+    .footer-inner {
+      width: min(var(--content-max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 92px;
+      padding: 18px 0;
+    }
+
+    .site-title {
+      margin: 0;
+      font-family: var(--font-sans);
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .site-subtitle {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 1.5rem;
+      line-height: 1.3;
+    }
+
+    .header-contact {
+      color: var(--muted);
+      font-family: var(--font-sans);
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .home-main {
+      padding: 48px 0 56px;
+    }
+
+    .icon-showcase-card {
+      display: grid;
+      place-items: center;
+      margin: 0 auto 24px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--card-radius);
+      background: var(--card) url("images/wood.png") center / cover;
+      box-shadow: var(--shadow);
+    }
+
+    .app-icon-list {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(72px, 112px));
+      justify-content: center;
+      gap: clamp(12px, 4vw, 32px);
+      width: 100%;
+      margin: 0;
+      padding: clamp(28px, 6vw, 56px);
+      list-style: none;
+    }
+
+    .app-icon-tile {
+      aspect-ratio: 1;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 26%;
+      background: var(--media-bg);
+      box-shadow:
+        0 0px 6px 2px rgba(24, 35, 48, 0.28),
+        0 0px 6px 3px rgba(24, 35, 48, 0.22);
+    }
+
+    .app-icon-tile:nth-child(1) {
+      transform: rotate(-7deg);
+    }
+
+    .app-icon-tile:nth-child(2) {
+      transform: rotate(4deg);
+    }
+
+    .app-icon-tile:nth-child(3) {
+      transform: rotate(-3deg);
+    }
+
+    .app-icon-tile:nth-child(4) {
+      transform: rotate(8deg);
+    }
+
+    .app-icon-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(260px, 1fr));
+      align-items: stretch;
+      gap: 24px;
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+
+    .portfolio-card {
+      display: flex;
+      border-radius: var(--card-radius);
+      box-shadow: var(--shadow);
+    }
+
+    .card-surface {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--card-radius);
+      background: var(--card);
+    }
+
+    .card-media {
+      aspect-ratio: 3 / 2;
+      margin: var(--media-inset) var(--media-inset) 0;
+      overflow: hidden;
+      border-radius: var(--media-radius);
+      background: var(--media-bg);
+    }
+
+    .card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .card-title {
+      margin: 0;
+      font-family: var(--font-sans);
+      font-size: 2.7rem;
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .card-copy {
+      margin: 10px 0 16px;
+      color: var(--muted);
+      font-size: 1.6rem;
+      line-height: 1.45;
+    }
+
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px 16px;
+      margin-top: auto;
+    }
+
+    .text-link {
+      font-family: var(--font-sans);
+      font-size: 1.4rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .app-store-link {
+      display: inline-block;
+      border-radius: 8px;
+    }
+
+    .app-store-link:hover,
+    .app-store-link:focus-visible {
+      transform: translateY(-1px);
+    }
+
+    .app-store-badge {
+      width: 132px;
+      height: auto;
+    }
+
+    @supports (corner-shape: squircle) {
+      .icon-showcase-card,
+      .app-icon-tile,
+      .portfolio-card,
+      .card-surface,
+      .card-media {
+        corner-shape: squircle;
+      }
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--line);
+      background: var(--footer);
+      color: var(--footer-ink);
+      font-family: var(--font-sans);
+      font-size: 1.4rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 24px 0;
+    }
+
+    .site-footer p {
+      margin: 0;
+    }
+
+    .site-footer a {
+      color: var(--footer-link);
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+    }
+
+    @media (max-width: 584px) {
+      .header-inner,
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: minmax(0, 1fr);
+        max-width: none;
+      }
+
+      .app-icon-list {
+        grid-template-columns: repeat(2, minmax(72px, 112px));
+      }
+
+      .home-main {
+        padding-top: 28px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      body {
+        font-size: 1.6rem;
+      }
+
+      .header-inner,
+      .home-main,
+      .footer-inner {
+        width: min(100% - 28px, var(--content-max));
+      }
+
+      .site-title {
+        font-size: 2.5rem;
+      }
+
+      .card-title {
+        font-size: 2.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div>
+        <h1 class="site-title">John Davis</h1>
+        <p class="site-subtitle">Software Product Portfolio</p>
+      </div>
+      <a class="header-contact" href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <main class="home-main" role="main">
+    <section class="icon-showcase-card" aria-label="Featured apps">
+      <ul class="app-icon-list">
+        <li class="app-icon-tile">
+          <img src="images/vantage_point_icon.webp" alt="Vantage Point" />
+        </li>
+        <li class="app-icon-tile">
+          <img src="images/fourpount_icon.webp" alt="Fourpoint" />
+        </li>
+        <li class="app-icon-tile">
+          <img src="images/scry_one_icon.webp" alt="ScryOne" />
+        </li>
+        <li class="app-icon-tile">
+          <img src="images/locket_icon.webp" alt="Locket" />
+        </li>
+      </ul>
+    </section>
+
+    <section class="portfolio-grid" aria-label="Product portfolio">
+      <article class="portfolio-card">
+        <div class="card-surface">
+          <div class="card-media">
+            <img src="images/VantageHero2.png" alt="Vantage Point icon plane over blue mosaic farmland" />
+          </div>
+          <div class="card-body">
+            <h2 class="card-title">Vantage Point</h2>
+            <p class="card-copy">
+              Transforms your folders into galleries and provides an artistic birds-eye-view of your files.
+            </p>
+            <div class="card-actions">
+              <a class="text-link" href="vantage_point">Learn more</a>
+              <a class="app-store-link" href="https://apps.apple.com/us/app/vantage-point-galleries/id1477731343">
+                <img class="app-store-badge" src="images/appStoreBanner.png" alt="Download on the App Store" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="portfolio-card">
+        <div class="card-surface">
+          <div class="card-media">
+            <img src="images/FourpointHero2.png" alt="Fourpoint icon" />
+          </div>
+          <div class="card-body">
+            <h2 class="card-title">Fourpoint</h2>
+            <p class="card-copy">
+              Makes it easy to calculate semester and cumulative GPA across schools, courses, and iCloud-synced data.
+            </p>
+            <div class="card-actions">
+              <a class="text-link" href="fourpoint">Learn more</a>
+              <a class="app-store-link" href="https://apps.apple.com/us/app/fourpoint-a-gpa-calculator/id383417299">
+                <img class="app-store-badge" src="images/appStoreBanner.png" alt="Download on the App Store" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="portfolio-card">
+        <div class="card-surface">
+          <div class="card-media">
+            <img src="images/ScryOneHero2.png" alt="ScryOne mana orbs on brown background" />
+          </div>
+          <div class="card-body">
+            <h2 class="card-title">ScryOne</h2>
+            <p class="card-copy">
+              Simple widgets to decorate your home screen with art from Magic: The Gathering.
+            </p>
+            <div class="card-actions">
+              <a class="text-link" href="scryone/scryone_privacy_policy">Privacy Policy</a>
+              <a class="app-store-link" href="https://apps.apple.com/us/app/scry-one-mtg-widgets/id1549591592">
+                <img class="app-store-badge" src="images/appStoreBanner.png" alt="Download on the App Store" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="portfolio-card">
+        <div class="card-surface">
+          <div class="card-media">
+            <img src="images/LocketHero2.png" alt="Locket photo widget icon" />
+          </div>
+          <div class="card-body">
+            <h2 class="card-title">Locket</h2>
+            <p class="card-copy">
+              Simple widgets to decorate your home screen with your photos, with on-device face-aware cropping.
+            </p>
+            <div class="card-actions">
+              <a class="text-link" href="locket/locket_privacy_policy">Privacy Policy</a>
+              <a class="app-store-link" href="https://apps.apple.com/us/app/locket-photo-widgets/id1531581706">
+                <img class="app-store-badge" src="images/appStoreBanner.png" alt="Download on the App Store" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="portfolio-card">
+        <div class="card-surface">
+          <div class="card-media">
+            <img src="images/TallGrassHero2.png" alt="Tall Grass icon" />
+          </div>
+          <div class="card-body">
+            <h2 class="card-title">Tall Grass</h2>
+            <p class="card-copy">
+              Simple widgets to decorate your home screen with random Pokemon.
+            </p>
+            <div class="card-actions">
+              <a class="text-link" href="tallgrass/tallgrass_privacy_policy">Privacy Policy</a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="footer-inner">
+      <p>Feel free to reach out.</p>
+      <p class="contact-links">
+        <a href="https://twitter.com/its_john_davis">Twitter</a>
+        <a href="https://mastodon.social/@its_john_davis" rel="me">Mastodon</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
