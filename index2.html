@@ -21,6 +21,7 @@
       --muted: #66717d;
       --card: #ffffff;
       --line: #dfe5eb;
+      --app-icon-border: rgba(24, 35, 48, 0.9);
       --header: rgba(255, 255, 255, 0.92);
       --media-bg: #eef2f6;
       --footer: #20272e;
@@ -165,10 +166,11 @@
     .app-icon-tile {
       aspect-ratio: 1;
       overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 26%;
+      border: 2px solid var(--app-icon-border);
+      border-radius: 25%;
       background: var(--media-bg);
       box-shadow:
+        inset 0 0 0 1px var(--app-icon-border),
         0 0px 6px 2px rgba(24, 35, 48, 0.28),
         0 0px 6px 3px rgba(24, 35, 48, 0.22);
     }
