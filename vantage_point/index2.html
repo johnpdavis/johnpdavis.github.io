@@ -40,19 +40,19 @@
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --page: #10151b;
-        --ink: #eef3f8;
-        --muted: #a6b1bd;
-        --card: #18212b;
-        --line: rgba(218, 228, 238, 0.16);
-        --image-border: rgba(218, 228, 238, 0.24);
-        --header: rgba(16, 21, 27, 0.92);
-        --media-bg: #121922;
-        --footer: #0c1117;
-        --footer-ink: #aeb8c4;
-        --footer-link: #eef3f8;
-        --accent: #89b8ff;
-        --accent-hover: #b7d1ff;
+        --page: #111111;
+        --ink: #f2f2f2;
+        --muted: #b3b3b3;
+        --card: #1b1b1b;
+        --line: rgba(255, 255, 255, 0.14);
+        --image-border: rgba(255, 255, 255, 0.24);
+        --header: rgba(17, 17, 17, 0.92);
+        --media-bg: #161616;
+        --footer: #0b0b0b;
+        --footer-ink: #bdbdbd;
+        --footer-link: #f2f2f2;
+        --accent: #d8d8d8;
+        --accent-hover: #ffffff;
         --shadow: 0 18px 38px rgba(0, 0, 0, 0.36);
       }
     }
@@ -181,7 +181,8 @@
     }
 
     .media-card,
-    .feature-card {
+    .feature-card,
+    .feature-list-section {
       overflow: hidden;
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -224,13 +225,13 @@
       padding: var(--media-inset) var(--media-inset) 0;
     }
 
+    .feature-media picture {
+      display: block;
+    }
+
     .feature-media img {
       width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      border: 1px solid var(--line);
-      border-radius: var(--media-radius);
-      background: var(--media-bg);
+      height: auto;
     }
 
     .feature-body {
@@ -249,6 +250,33 @@
       color: var(--muted);
       font-size: 1.6rem;
       line-height: 1.45;
+    }
+
+    .feature-list-section {
+      margin-top: 24px;
+      padding: 24px;
+    }
+
+    .feature-list-title {
+      margin: 0;
+      font-size: 2.4rem;
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px 28px;
+      margin: 18px 0 0;
+      padding-left: 1.2em;
+      color: var(--muted);
+      font-size: 1.7rem;
+      line-height: 1.45;
+    }
+
+    .feature-list li::marker {
+      color: var(--accent);
     }
 
     .site-footer {
@@ -283,9 +311,9 @@
     @supports (corner-shape: squircle) {
       .media-card,
       .feature-card,
+      .feature-list-section,
       .hero-image,
-      .media-card img,
-      .feature-media img {
+      .media-card img {
         corner-shape: squircle;
       }
     }
@@ -298,6 +326,10 @@
 
       .hero {
         gap: 24px;
+      }
+
+      .hero-image {
+        order: -1;
       }
     }
 
@@ -328,6 +360,15 @@
 
       .feature-title {
         font-size: 2.2rem;
+      }
+
+      .feature-list-section {
+        padding: 20px;
+      }
+
+      .feature-list {
+        grid-template-columns: 1fr;
+        font-size: 1.6rem;
       }
     }
   </style>
@@ -360,24 +401,31 @@
     <section class="feature-grid" aria-label="Vantage Point features">
       <article class="feature-card">
         <div class="feature-media">
-          <img src="../images/vantage_point/iPad_image1.png" alt="Screenshot of Vantage Point showing a mosaic gallery of architectural images" />
+          <picture>
+            <source srcset="../images/vantage_point/vp_gallery_dark.png" media="(prefers-color-scheme: dark)" />
+            <img src="../images/vantage_point/vp_gallery_light.png" alt="Screenshot of Vantage Point showing a mosaic gallery of architectural images" />
+          </picture>
         </div>
         <div class="feature-body">
-          <h2 class="feature-title">Birds Eye View</h2>
+          <h2 class="feature-title">Birds Eye Viewing</h2>
           <p class="feature-copy">
-            Feed Vantage Point a folder or album and it arranges the gallery into a mosaic format that honors image proportions.
+            Feed Vantage Point a folder or album and it arranges a gallery into a mosaic layout that honors image proportions.
           </p>
+          <p class="feature-copy">Your images and photos remain in their original location, so there's no extra proprietary data to worry about.</p>
         </div>
       </article>
 
       <article class="feature-card">
         <div class="feature-media">
-          <img src="../images/vantage_point/iPhone11ProMax_product.png" alt="Screenshot of Vantage Point on iPhone" />
+          <picture>
+            <source srcset="../images/vantage_point/vp_home_dark.png" media="(prefers-color-scheme: dark)" />
+            <img src="../images/vantage_point/vp_home_light.png" alt="Screenshot of Vantage Point on iPhone" />
+          </picture>
         </div>
         <div class="feature-body">
-          <h2 class="feature-title">Organization</h2>
+          <h2 class="feature-title">Organizing</h2>
           <p class="feature-copy">
-            Add pictures through the iOS share sheet, then drag them from the inbox into the folder or album that backs each gallery.
+            Add pictures through the iOS share sheet, or drag and drop. Add them to your folders and albums by moving them to galleries.
           </p>
         </div>
       </article>
@@ -387,12 +435,30 @@
           <img src="../images/vantage_point/appletv_product.png" alt="Screenshot of Vantage Point full screen viewing on Apple TV" />
         </div>
         <div class="feature-body">
-          <h2 class="feature-title">Full Screen Viewing</h2>
+          <h2 class="feature-title">Showcasing</h2>
           <p class="feature-copy">
-            AirPlay Mirror to a compatible screen and browse the gallery edge to edge from the on-device controller.
+            AirPlay Mirror to a compatible device and browse a gallery on the big screen.
+          </p>
+
+          <p class="feature-copy">
+            Use iPhone or iPad UI as a remote control.
           </p>
         </div>
       </article>
+    </section>
+
+    <section class="feature-list-section" aria-labelledby="feature-list-title">
+      <h2 class="feature-list-title" id="feature-list-title">More</h2>
+      <ul class="feature-list">
+        <li>Supports galleries from Apple Photos and Files / Finder</li>
+        <li>Keeps files and photos in their original locations.</li>
+        <li>Contains actions for shortcuts and Siri to add images to galleries and inbox</li>
+        <li>Drag and drop images, or use context menus to get organized</li>
+        <li>Provides home screen widgets to display folders as mini mosaics</li>
+        <li>View galleries on Apple TV with AirPlay Mirroring.</li>
+        <li>Supports iOS, iPadOS, macOS, and visionOS</li>
+
+      </ul>
     </section>
   </main>
 
@@ -401,7 +467,6 @@
       <p>Vantage Point</p>
       <p class="footer-links">
         <a href="../index2.html">Portfolio</a>
-        <a href="https://twitter.com/its_john_davis">Twitter</a>
         <a href="https://mastodon.social/@its_john_davis" rel="me">Mastodon</a>
       </p>
     </div>
