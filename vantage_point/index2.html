@@ -234,6 +234,12 @@
       height: auto;
     }
 
+    .feature-media-contained img {
+      border: 1px solid var(--line);
+      border-radius: var(--media-radius);
+      background: var(--media-bg);
+    }
+
     .feature-body {
       padding: 20px;
     }
@@ -313,7 +319,8 @@
       .feature-card,
       .feature-list-section,
       .hero-image,
-      .media-card img {
+      .media-card img,
+      .feature-media-contained img {
         corner-shape: squircle;
       }
     }
@@ -377,7 +384,6 @@
   <header class="site-header">
     <div class="header-inner">
       <a class="brand-link" href="../index2.html">John Davis</a>
-      <a class="privacy-link" href="vantage_point_privacy_policy">Privacy Policy</a>
     </div>
   </header>
 
@@ -407,7 +413,7 @@
           </picture>
         </div>
         <div class="feature-body">
-          <h2 class="feature-title">Birds Eye Viewing</h2>
+          <h2 class="feature-title">Birds Eye View</h2>
           <p class="feature-copy">
             Feed Vantage Point a folder or album and it arranges a gallery into a mosaic layout that honors image proportions.
           </p>
@@ -423,7 +429,7 @@
           </picture>
         </div>
         <div class="feature-body">
-          <h2 class="feature-title">Organizing</h2>
+          <h2 class="feature-title">Organize</h2>
           <p class="feature-copy">
             Add pictures through the iOS share sheet, or drag and drop. Add them to your folders and albums by moving them to galleries.
           </p>
@@ -431,11 +437,11 @@
       </article>
 
       <article class="feature-card">
-        <div class="feature-media">
+        <div class="feature-media feature-media-contained">
           <img src="../images/vantage_point/appletv_product.png" alt="Screenshot of Vantage Point full screen viewing on Apple TV" />
         </div>
         <div class="feature-body">
-          <h2 class="feature-title">Showcasing</h2>
+          <h2 class="feature-title">Showcase</h2>
           <p class="feature-copy">
             AirPlay Mirror to a compatible device and browse a gallery on the big screen.
           </p>
