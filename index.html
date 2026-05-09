@@ -1,248 +1,591 @@
 <!DOCTYPE html>
-<html><meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Software Product Portfolio" />
 
-<title>John Davis - Hobby Portfolio</title>
+  <title>John Davis - Hobby Portfolio</title>
 
+  <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+  <style>
+    :root {
+      color-scheme: light dark;
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --page: #f4f6f8;
+      --ink: #20272e;
+      --muted: #66717d;
+      --card: #ffffff;
+      --line: #dfe5eb;
+      --app-icon-border: rgba(24, 35, 48, 0.85);
+      --header: rgba(255, 255, 255, 0.92);
+      --media-bg: #eef2f6;
+      --footer: #20272e;
+      --footer-ink: #c9d2dc;
+      --footer-link: #ffffff;
+      --accent: #367aff;
+      --accent-hover: #5a98ff;
+      --shadow: 0 14px 30px rgba(24, 35, 48, 0.14);
+      --card-radius: 32px;
+      --media-inset: 14px;
+      --media-radius: calc(var(--card-radius) - var(--media-inset));
+      --content-max: 940px;
+    }
 
-  <link rel="shortcut icon" href="https://johnpdavis.github.io/images/favicon.png" type="image/png"
-/>
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --page: #111111;
+        --ink: #f2f2f2;
+        --muted: #b3b3b3;
+        --card: #1b1b1b;
+        --line: rgba(255, 255, 255, 0.14);
+        --header: rgba(17, 17, 17, 0.92);
+        --media-bg: #161616;
+        --footer: #0b0b0b;
+        --footer-ink: #bdbdbd;
+        --footer-link: #f2f2f2;
+        --accent: #d8d8d8;
+        --accent-hover: #ffffff;
+        --shadow: 0 18px 38px rgba(0, 0, 0, 0.36);
+      }
+    }
 
+    * {
+      box-sizing: border-box;
+    }
 
-  <meta name="description" content="Software Product Portfolio"
-/>
+    html {
+      min-height: 100%;
+      font-size: 62.5%;
+    }
 
-  <meta name="keywords" content="vantage point, vantage point galleries, gallery, vantage, point, fourpoint, gpa calculator, john davis, portfolio, locket"
-/>
-<meta name="referrer" content="no-referrer-when-downgrade" />
+    body {
+      min-width: 320px;
+      min-height: 100%;
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      font-size: 1.8rem;
+      line-height: 1.55;
+    }
 
-<meta name="HandheldFriendly" content="True" />
-<meta name="MobileOptimized" content="320" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 0.08em;
+      text-underline-offset: 0.2em;
+      transition: color 160ms ease, border-color 160ms ease, transform 160ms ease;
+    }
 
-<link rel="stylesheet" href="https://johnpdavis.github.io/css/screen.css" />
-<link
-  href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700"
-  rel="stylesheet"
-  type="text/css"
-/>
-<link
-  href="https://fonts.googleapis.com/css?family=Oswald:400,300,700|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800|Roboto+Slab:400,100,300,700"
-  rel="stylesheet"
-  type="text/css"
-/>
-<link
-  rel="stylesheet"
-  href="https://johnpdavis.github.io/font-awesome/css/font-awesome.min.css"
-/>
+    a:hover,
+    a:focus-visible {
+      color: var(--accent-hover);
+    }
 
-<meta property="og:title" content="" />
-<meta property="og:description" content="Software Product Portfolio" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://johnpdavis.github.io/" />
-<meta property="og:image" content="https://johnpdavis.github.io/images/site-preview.png"/>
-<meta property="og:site_name" content="John Davis - Hobby Portfolio" />
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://johnpdavis.github.io/images/site-preview.png"/>
+    .site-header {
+      border-bottom: 1px solid var(--line);
+      background: var(--header);
+    }
 
-<meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="Software Product Portfolio"/>
+    .header-inner,
+    .home-main,
+    .footer-inner {
+      width: min(var(--content-max), calc(100% - 40px));
+      margin: 0 auto;
+    }
 
-<meta itemprop="name" content="">
-<meta itemprop="description" content="Software Product Portfolio">
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 92px;
+      padding: 18px 0;
+    }
 
+    .site-title {
+      margin: 0;
+      font-family: var(--font-sans);
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: 0;
+    }
 
+    .site-subtitle {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 1.5rem;
+      line-height: 1.3;
+    }
 
+    .header-contact {
+      color: var(--muted);
+      font-family: var(--font-sans);
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
 
+    .home-main {
+      padding: 48px 0 56px;
+    }
 
+    .icon-showcase-card {
+      display: grid;
+      place-items: center;
+      margin: 0 auto 24px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--card-radius);
+      background: var(--card) url("images/wood.png") center / cover;
+      box-shadow: var(--shadow);
+    }
 
+    .app-icon-list {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(72px, 112px));
+      justify-content: center;
+      gap: clamp(12px, 4vw, 32px);
+      width: 100%;
+      margin: 0;
+      padding: clamp(28px, 6vw, 56px);
+      list-style: none;
+    }
 
+    .app-icon-tile {
+      aspect-ratio: 1;
+      overflow: hidden;
+      border: 2px solid var(--app-icon-border);
+      border-radius: 25%;
+      background: var(--media-bg);
+      box-shadow:
+        inset 0 0 0 1px var(--app-icon-border),
+        0 0px 6px 2px rgba(24, 35, 48, 0.28),
+        0 0px 6px 3px rgba(24, 35, 48, 0.22);
+    }
 
+    .app-icon-tile:nth-child(1) {
+      transform: rotate(-7deg) translate3d(0, 0, 0.1px);
+    }
 
+    .app-icon-tile:nth-child(2) {
+      transform: rotate(4deg) translate3d(0, 0, 0.1px);
+    }
 
-<link rel="stylesheet" href='https://johnpdavis.github.io/css/jd_style.css'>
+    .app-icon-tile:nth-child(3) {
+      transform: rotate(-3deg) translate3d(0, 0, 0.1px);
+    }
 
+    .app-icon-tile:nth-child(4) {
+      transform: rotate(8deg) translate3d(0, 0, 0.1px);
+    }
 
+    .app-icon-link {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      color: inherit;
+    }
 
+    .app-icon-link:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: -6px;
+    }
 
+    .app-icon-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-<link
-  rel="apple-touch-icon"
-  sizes="180x180"
-  href="https://johnpdavis.github.io/images/apple-touch-icon.png"
-/>
-<link
-  rel="icon"
-  type="image/png"
-  sizes="32x32"
-  href="https://johnpdavis.github.io/images/favicon-32x32.png"
-/>
-<link
-  rel="icon"
-  type="image/png"
-  sizes="16x16"
-  href="https://johnpdavis.github.io/images/favicon-16x16.png"
-/>
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(260px, 1fr));
+      align-items: stretch;
+      gap: 24px;
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+
+    .portfolio-card {
+      display: flex;
+      border-radius: var(--card-radius);
+      box-shadow: var(--shadow);
+    }
+
+    .portfolio-card-vantage {
+      --card-link: #236ee8;
+      --card-link-hover: #1558c7;
+    }
+
+    .portfolio-card-fourpoint {
+      --card-link: #187a45;
+      --card-link-hover: #0f6536;
+    }
+
+    .portfolio-card-scryone {
+      --card-link: #8a4fd6;
+      --card-link-hover: #6f37bd;
+    }
+
+    .portfolio-card-locket {
+      --card-link: #d63f68;
+      --card-link-hover: #b92d54;
+    }
+
+    .portfolio-card-tallgrass {
+      --card-link: #258047;
+      --card-link-hover: #176839;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .portfolio-card-vantage {
+        --card-link: #8fb7ff;
+        --card-link-hover: #c2d8ff;
+      }
+
+      .portfolio-card-fourpoint {
+        --card-link: #6fd090;
+        --card-link-hover: #98e5ae;
+      }
+
+      .portfolio-card-scryone {
+        --card-link: #c3a0f4;
+        --card-link-hover: #dac5ff;
+      }
+
+      .portfolio-card-locket {
+        --card-link: #ff91ab;
+        --card-link-hover: #ffc0ce;
+      }
+
+      .portfolio-card-tallgrass {
+        --card-link: #83d99b;
+        --card-link-hover: #a9ebb7;
+      }
+    }
+
+    .card-surface {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--card-radius);
+      background: var(--card);
+    }
+
+    .card-media {
+      aspect-ratio: 3 / 2;
+      margin: var(--media-inset) var(--media-inset) 0;
+      overflow: hidden;
+      border-radius: var(--media-radius);
+      background: var(--media-bg);
+    }
+
+    .card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .card-title {
+      margin: 0;
+      font-family: var(--font-sans);
+      font-size: 2.7rem;
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .card-copy {
+      margin: 10px 0 16px;
+      color: var(--muted);
+      font-size: 1.6rem;
+      line-height: 1.45;
+    }
+
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px 16px;
+      margin-top: auto;
+    }
+
+    .text-link {
+      color: var(--card-link, var(--accent));
+      font-family: var(--font-sans);
+      font-size: 1.4rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .text-link:hover,
+    .text-link:focus-visible {
+      color: var(--card-link-hover, var(--accent-hover));
+    }
+
+    .app-store-link {
+      display: inline-block;
+      border-radius: 8px;
+    }
+
+    .app-store-link:hover,
+    .app-store-link:focus-visible {
+      transform: translateY(-1px);
+    }
+
+    .app-store-badge {
+      width: 132px;
+      height: auto;
+    }
+
+    @supports (corner-shape: squircle) {
+      .icon-showcase-card,
+      .app-icon-tile,
+      .portfolio-card,
+      .card-surface,
+      .card-media {
+        corner-shape: squircle;
+      }
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--line);
+      background: var(--footer);
+      color: var(--footer-ink);
+      font-family: var(--font-sans);
+      font-size: 1.4rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 24px 0;
+    }
+
+    .site-footer p {
+      margin: 0;
+    }
+
+    .site-footer a {
+      color: var(--footer-link);
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+    }
+
+    @media (max-width: 584px) {
+      .header-inner,
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: minmax(0, 1fr);
+        max-width: none;
+      }
+
+      .app-icon-list {
+        grid-template-columns: repeat(2, minmax(72px, 112px));
+      }
+
+      .home-main {
+        padding-top: 28px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      body {
+        font-size: 1.6rem;
+      }
+
+      .header-inner,
+      .home-main,
+      .footer-inner {
+        width: min(100% - 28px, var(--content-max));
+      }
+
+      .site-title {
+        font-size: 2.5rem;
+      }
+
+      .card-title {
+        font-size: 2.3rem;
+      }
+    }
+  </style>
+</head>
 <body>
-
-
-<header id="site-head" style="background-image: url(images/cover-image.png)">
-    <div class="vertical">
-        <div id="site-head-content" class="inner">
-
-            <h1 class="blog-title">John Davis</h1>
-            <h2 class="blog-description">Software Product Portfolio</h2>
-
-            
-                 <a class='btn site-menu' data-title-anchor='vantage-point'>Vantage Point</a>
-            
-                 <a class='btn site-menu' data-title-anchor='fourpoint'>Fourpoint</a>
-            
-                 <a class='btn site-menu' data-title-anchor='locket'>Locket</a>
-            
-                 <a class='btn site-menu' data-title-anchor='tall-grass'>Tall Grass</a>
-            
-                 <a class='btn site-menu' data-title-anchor='scryone'>ScryOne</a>
-            
-                 <a class='btn site-menu' data-title-anchor='contact'>Contact</a>
-            
-            <i id='header-arrow' class="fa fa-angle-down"></i>
-        </div>
+  <header class="site-header">
+    <div class="header-inner">
+      <div>
+        <h1 class="site-title">John Davis</h1>
+        <p class="site-subtitle">Software Product Portfolio</p>
+      </div>
+      <a class="header-contact" href="#contact">Contact</a>
     </div>
-</header>
-<main class="content" role="main">
+  </header>
 
-    <div class='fixed-nav'>
+  <main class="home-main" role="main">
+    <section class="icon-showcase-card" aria-label="Featured apps">
+      <ul class="app-icon-list">
+        <li class="app-icon-tile">
+          <a class="app-icon-link" href="https://apps.apple.com/us/app/vantage-point-galleries/id1477731343">
+            <img src="images/vantage_point_icon.webp" alt="Vantage Point" />
+          </a>
+        </li>
+        <li class="app-icon-tile">
+          <a class="app-icon-link" href="https://apps.apple.com/us/app/fourpoint-a-gpa-calculator/id383417299">
+            <img src="images/fourpount_icon.webp" alt="Fourpoint" />
+          </a>
+        </li>
+        <li class="app-icon-tile">
+          <a class="app-icon-link" href="https://apps.apple.com/us/app/scry-one-mtg-widgets/id1549591592">
+            <img src="images/scry_one_icon.webp" alt="ScryOne" />
+          </a>
+        </li>
+        <li class="app-icon-tile">
+          <a class="app-icon-link" href="https://apps.apple.com/us/app/locket-photo-widgets/id1531581706">
+            <img src="images/locket_icon.webp" alt="Locket" />
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="portfolio-grid" aria-label="Product portfolio">
+      <article class="portfolio-card portfolio-card-vantage">
+        <div class="card-surface">
+          <div class="card-media">
+            <img src="images/VantageHero2.png" alt="Vantage Point icon plane over blue mosaic farmland" />
+          </div>
+          <div class="card-body">
+            <h2 class="card-title">Vantage Point</h2>
+            <p class="card-copy">
+              Transforms your folders into galleries and provides an artistic birds-eye-view of your files.
+            </p>
+            <div class="card-actions">
+              <a class="text-link" href="vantage_point">Learn more</a>
+              <a class="app-store-link" href="https://apps.apple.com/us/app/vantage-point-galleries/id1477731343">
+                <img class="app-store-badge" src="images/appStoreBanner.png" alt="Download on the App Store" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="portfolio-card portfolio-card-fourpoint">
+        <div class="card-surface">
+          <div class="card-media">
+            <img src="images/FourpointHero2.png" alt="Fourpoint icon" />
+          </div>
+          <div class="card-body">
+            <h2 class="card-title">Fourpoint</h2>
+            <p class="card-copy">
+              Makes it easy to calculate semester and cumulative GPA across schools, courses, and iCloud-synced data.
+            </p>
+            <div class="card-actions">
+              <a class="text-link" href="fourpoint">Learn more</a>
+              <a class="app-store-link" href="https://apps.apple.com/us/app/fourpoint-a-gpa-calculator/id383417299">
+                <img class="app-store-badge" src="images/appStoreBanner.png" alt="Download on the App Store" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="portfolio-card portfolio-card-scryone">
+        <div class="card-surface">
+          <div class="card-media">
+            <img src="images/ScryOneHero2.png" alt="ScryOne mana orbs on brown background" />
+          </div>
+          <div class="card-body">
+            <h2 class="card-title">ScryOne</h2>
+            <p class="card-copy">
+              Simple widgets to decorate your home screen with art from Magic: The Gathering.
+            </p>
+            <div class="card-actions">
+              <a class="text-link" href="scryone/scryone_privacy_policy">Privacy Policy</a>
+              <a class="app-store-link" href="https://apps.apple.com/us/app/scry-one-mtg-widgets/id1549591592">
+                <img class="app-store-badge" src="images/appStoreBanner.png" alt="Download on the App Store" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="portfolio-card portfolio-card-locket">
+        <div class="card-surface">
+          <div class="card-media">
+            <img src="images/LocketHero2.png" alt="Locket photo widget icon" />
+          </div>
+          <div class="card-body">
+            <h2 class="card-title">Locket</h2>
+            <p class="card-copy">
+              Simple widgets to decorate your home screen with your photos, with on-device face-aware cropping.
+            </p>
+            <div class="card-actions">
+              <a class="text-link" href="locket/locket_privacy_policy">Privacy Policy</a>
+              <a class="app-store-link" href="https://apps.apple.com/us/app/locket-photo-widgets/id1531581706">
+                <img class="app-store-badge" src="images/appStoreBanner.png" alt="Download on the App Store" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="portfolio-card portfolio-card-tallgrass">
+        <div class="card-surface">
+          <div class="card-media">
+            <img src="images/TallGrassHero2.png" alt="Tall Grass icon" />
+          </div>
+          <div class="card-body">
+            <h2 class="card-title">Tall Grass</h2>
+            <p class="card-copy">
+              Simple widgets to decorate your home screen with random Pokemon.
+            </p>
+            <div class="card-actions">
+              <a class="text-link" href="tallgrass/tallgrass_privacy_policy">Privacy Policy</a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="footer-inner">
+      <p>Feel free to reach out.</p>
+      <p class="contact-links">
+        <a href="https://mastodon.social/@its_john_davis" rel="me">Mastodon</a>
+      </p>
     </div>
-    
-        <div class='post-holder'>
-            <article id='vantage-point' class='post first'>
-                <header class="post-header">
-                    <h2 class="post-title">Vantage Point</h2>
-                </header>
-                <section class="post-content">
-                    <p><img src="images/VantageHero.png" alt="Vantage Icon Plane over blue mosaic farmland"></p>
-<p>Vantage Point transforms your folders into galleries and provides an artistic birds-eye-view of your files.</p>
-<p>Vantage Point&rsquo;s galleries use a mosaic layout and eliminate the whitespace traditionally found in Finder and other viewing apps. This arrangement is more conducive to casual browsing and inspiration seeking.</p>
-<p><a href="vantage_point">Learn more.</a></p>
-<p><a href="https://apps.apple.com/us/app/vantage-point-galleries/id1477731343"><img src="../images/appStoreBanner.png" alt="App Store"></a></p>
-<hr>
-
-                </section>
-            </article>
-            <div class='post-after'></div>
-        </div>
-    
-        <div class='post-holder'>
-            <article id='fourpoint' class='post '>
-                <header class="post-header">
-                    <h2 class="post-title">Fourpoint</h2>
-                </header>
-                <section class="post-content">
-                    <p><img src="images/FourpointHero.png" alt="Fourpoint icon"></p>
-<p>Fourpoint makes it easy for to calculate the GPA of a single semesters, and the cumulative GPA of your educational career.</p>
-<p>As you add semesters and courses Fourpoint will provide quick and accurate GPA results. This app includes support for multiple schools and iCloud syncing making it an essential and convenient utility for students.</p>
-<p><a href="fourpoint">Learn more.</a></p>
-<p><a href="https://apps.apple.com/us/app/fourpoint-a-gpa-calculator/id383417299"><img src="../images/appStoreBanner.png" alt="App Store"></a></p>
-<hr>
-
-                </section>
-            </article>
-            <div class='post-after'></div>
-        </div>
-    
-        <div class='post-holder'>
-            <article id='locket' class='post '>
-                <header class="post-header">
-                    <h2 class="post-title">Locket</h2>
-                </header>
-                <section class="post-content">
-                    <p><img src="images/LocketHero.png" alt="Vantage Icon Plane over blue mosaic farmland"></p>
-<p>Simple widgets to decorate your home screen with your photos.</p>
-<p>Uses Apple&rsquo;s on-device machine learning to emphasize the display of faces. This is particularly helpful on preventing face-cropping on the rectangular shaped widgets.</p>
-<p><a href="https://apps.apple.com/us/app/locket-photo-widgets/id1531581706"><img src="../images/appStoreBanner.png" alt="App Store"></a></p>
-<p><a href="locket/locket_privacy_policy">Privacy Policy</a></p>
-<hr>
-
-                </section>
-            </article>
-            <div class='post-after'></div>
-        </div>
-    
-        <div class='post-holder'>
-            <article id='tall-grass' class='post '>
-                <header class="post-header">
-                    <h2 class="post-title">Tall Grass</h2>
-                </header>
-                <section class="post-content">
-                    <p><img src="images/TallGrassHero.png" alt="Logo invoking Pikachu hiding in the grass"></p>
-<p>Simple widgets to decorate your home screen with random Pokémon.</p>
-<p><a href="tallgrass/tallgrass_privacy_policy">Privacy Policy</a></p>
-<hr>
-
-                </section>
-            </article>
-            <div class='post-after'></div>
-        </div>
-    
-        <div class='post-holder'>
-            <article id='scryone' class='post '>
-                <header class="post-header">
-                    <h2 class="post-title">ScryOne</h2>
-                </header>
-                <section class="post-content">
-                    <p><img src="images/ScryOneHero.png" alt="Mana orbs on brown background"></p>
-<p>Simple widgets to decorate your home screen with art from Magic: The Gathering.</p>
-<p><a href="scryone/scryone_privacy_policy">Privacy Policy</a></p>
-<hr>
-
-                </section>
-            </article>
-            <div class='post-after'></div>
-        </div>
-    
-        <div class='post-holder'>
-            <article id='contact' class='post last'>
-                <header class="post-header">
-                    <h2 class="post-title">Contact</h2>
-                </header>
-                <section class="post-content">
-                    <p><i class="fa fa-twitter"></i>
- <a href="https://twitter.com/its_john_davis">@its_john_davis</a></p>
-<p>Feel free to reach out.</p>
-
-                </section>
-            </article>
-            <div class='post-after'></div>
-        </div>
-    
-</main>
-<footer class="site-footer">
-  <div class="inner">
-    
-
-
-    <section></section>
-    
-      <section>
-        
-        <a href="https://github.com/janraasch/hugo-scroll/">Design</a> template
-        built with ♥️ by
-        <a href="https://www.janraasch.com" title="Jan Raasch">Jan Raasch</a>
-      </section>
-
-  </div>
-</footer>
-
-    <script
-      type="text/javascript"
-      src="https://code.jquery.com/jquery-1.11.3.min.js"
-    ></script>
-
-    
-    <script type="text/javascript" src='https://johnpdavis.github.io/js/icons.js'></script>
-    <script type="text/javascript" src='https://johnpdavis.github.io/js/index.js'></script>
-    
+  </footer>
 </body>
 </html>
