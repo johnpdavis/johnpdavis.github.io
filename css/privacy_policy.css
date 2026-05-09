@@ -1,0 +1,281 @@
+:root {
+  color-scheme: light dark;
+  --privacy-font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --privacy-page: #f4f6f8;
+  --privacy-ink: #20272e;
+  --privacy-muted: #66717d;
+  --privacy-card: #ffffff;
+  --privacy-line: #dfe5eb;
+  --privacy-header: rgba(255, 255, 255, 0.92);
+  --privacy-footer: #20272e;
+  --privacy-footer-ink: #c9d2dc;
+  --privacy-footer-link: #ffffff;
+  --privacy-accent: #367aff;
+  --privacy-accent-hover: #5a98ff;
+  --privacy-shadow: 0 14px 30px rgba(24, 35, 48, 0.14);
+  --privacy-radius: 32px;
+  --privacy-content-max: 860px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --privacy-page: #111111;
+    --privacy-ink: #f2f2f2;
+    --privacy-muted: #b3b3b3;
+    --privacy-card: #1b1b1b;
+    --privacy-line: rgba(255, 255, 255, 0.14);
+    --privacy-header: rgba(17, 17, 17, 0.92);
+    --privacy-footer: #0b0b0b;
+    --privacy-footer-ink: #bdbdbd;
+    --privacy-footer-link: #f2f2f2;
+    --privacy-accent: #d8d8d8;
+    --privacy-accent-hover: #ffffff;
+    --privacy-shadow: 0 18px 38px rgba(0, 0, 0, 0.36);
+  }
+}
+
+body.fourpoint-policy {
+  --privacy-accent: #187a45;
+  --privacy-accent-hover: #0f6536;
+}
+
+@media (prefers-color-scheme: dark) {
+  body.fourpoint-policy {
+    --privacy-accent: #6fd090;
+    --privacy-accent-hover: #98e5ae;
+  }
+}
+
+body.vantage-point-policy {
+  --privacy-accent: #367aff;
+  --privacy-accent-hover: #5a98ff;
+}
+
+body.scryone-policy {
+  --privacy-accent: #7b4fd6;
+  --privacy-accent-hover: #9368ec;
+}
+
+body.locket-policy {
+  --privacy-accent: #c23b68;
+  --privacy-accent-hover: #db5a85;
+}
+
+body.tallgrass-policy {
+  --privacy-accent: #26773d;
+  --privacy-accent-hover: #37914f;
+}
+
+body.curate-policy {
+  --privacy-accent: #6f5bd6;
+  --privacy-accent-hover: #8673ee;
+}
+
+@media (prefers-color-scheme: dark) {
+  body.vantage-point-policy,
+  body.scryone-policy,
+  body.locket-policy,
+  body.tallgrass-policy,
+  body.curate-policy {
+    --privacy-accent: #d8d8d8;
+    --privacy-accent-hover: #ffffff;
+  }
+}
+
+html {
+  min-height: 100%;
+  font-size: 62.5%;
+}
+
+body.privacy-policy-page {
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+  background: var(--privacy-page);
+  color: var(--privacy-ink);
+  font-family: var(--privacy-font-sans);
+  font-size: 1.8rem;
+  line-height: 1.55;
+}
+
+body.privacy-policy-page * {
+  box-sizing: border-box;
+}
+
+body.privacy-policy-page a {
+  color: var(--privacy-accent);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.2em;
+  transition: color 160ms ease, transform 160ms ease;
+}
+
+body.privacy-policy-page a:hover,
+body.privacy-policy-page a:focus-visible {
+  color: var(--privacy-accent-hover);
+}
+
+body.privacy-policy-page .content {
+  width: min(var(--privacy-content-max), calc(100% - 40px));
+  max-width: none;
+  margin: 0 auto;
+  padding: 48px 0 56px;
+}
+
+body.privacy-policy-page .post {
+  overflow: hidden;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  border: 1px solid var(--privacy-line);
+  border-radius: var(--privacy-radius);
+  background: var(--privacy-card);
+  box-shadow: var(--privacy-shadow);
+}
+
+body.privacy-policy-page .post-header {
+  margin: 0;
+  padding: 24px 32px;
+  border-bottom: 1px solid var(--privacy-line);
+  background: var(--privacy-header);
+}
+
+body.privacy-policy-page #blog-logo {
+  color: var(--privacy-muted);
+  font-family: var(--privacy-font-sans);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+body.privacy-policy-page .post-title {
+  max-width: 680px;
+  margin: 0;
+  padding: 40px 32px 8px;
+  color: var(--privacy-ink);
+  font-family: var(--privacy-font-sans);
+  font-size: clamp(3.8rem, 7vw, 6.4rem);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 0.98;
+  text-align: left;
+}
+
+body.privacy-policy-page .post-content {
+  max-width: 680px;
+  margin: 0;
+  padding: 20px 32px 44px;
+  color: var(--privacy-ink);
+  font-family: var(--privacy-font-sans);
+}
+
+body.privacy-policy-page .post-content p {
+  margin: 0 0 1.2em;
+  color: var(--privacy-ink);
+  font-family: var(--privacy-font-sans);
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+body.privacy-policy-page .post-content p:first-child {
+  color: var(--privacy-muted);
+  font-size: 2rem;
+  line-height: 1.45;
+}
+
+body.privacy-policy-page .post-content hr {
+  width: 100%;
+  height: 1px;
+  margin: 28px 0 32px;
+  border: 0;
+  background: var(--privacy-line);
+}
+
+body.privacy-policy-page .post-content h2 {
+  margin: 2.1em 0 0.55em;
+  color: var(--privacy-ink);
+  font-family: var(--privacy-font-sans);
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.05;
+  text-transform: none;
+}
+
+body.privacy-policy-page .post-content h2::before {
+  display: block;
+  width: 32px;
+  height: 3px;
+  margin: 0 0 12px;
+  border-radius: 999px;
+  background: var(--privacy-accent);
+  content: "";
+}
+
+body.privacy-policy-page .site-footer {
+  margin: 0;
+  padding: 28px 0;
+  background: var(--privacy-footer);
+  color: var(--privacy-footer-ink);
+  font-family: var(--privacy-font-sans);
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+body.privacy-policy-page .site-footer .inner {
+  width: min(var(--privacy-content-max), calc(100% - 40px));
+  max-width: none;
+  margin: 0 auto;
+  padding: 0;
+}
+
+body.privacy-policy-page .site-footer section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 22px;
+  align-items: center;
+}
+
+body.privacy-policy-page .site-footer section:empty {
+  display: none;
+}
+
+body.privacy-policy-page .site-footer a {
+  color: var(--privacy-footer-link);
+}
+
+@supports (corner-shape: squircle) {
+  body.privacy-policy-page .post {
+    corner-shape: squircle;
+  }
+}
+
+@media (max-width: 640px) {
+  body.privacy-policy-page .content {
+    width: min(var(--privacy-content-max), calc(100% - 28px));
+    padding: 28px 0 36px;
+  }
+
+  body.privacy-policy-page .post-header {
+    padding: 20px 22px;
+  }
+
+  body.privacy-policy-page .post-title {
+    padding: 32px 22px 6px;
+  }
+
+  body.privacy-policy-page .post-content {
+    padding: 18px 22px 36px;
+  }
+
+  body.privacy-policy-page .post-content p,
+  body.privacy-policy-page .post-content p:first-child {
+    font-size: 1.7rem;
+  }
+
+  body.privacy-policy-page .post-content h2 {
+    font-size: 2.2rem;
+  }
+}
